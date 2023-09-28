@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="bg-container">
+    <div class="parent">
+      <h1 class="heading">Here DOM</h1>
+
+      <ul class="language">
+        <li class="items">Javascript</li>
+      </ul>
+      <input class="input-text" type="text" placeholder="Name" />
+    </div>
+
+    <script>
+      function addLanguage(langName) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`;
+        const newLanguage = document.querySelector(".language");
+        newLanguage.appendChild(li);
+      }
+      addLanguage("Python");
+      addLanguage("PHP");
+
+      function addOptLanguage(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+      }
+      addOptLanguage("Java");
+
+      // Edit
+      const secondLang = document.querySelector("li:nth-child(2)");
+      // secondLang.innerHTML="TypeScript";
+      const newLi = document.createElement("li");
+      newLi.textContent = "Django";
+      secondLang.replaceWith(newLi);
+
+      // remove element
+      const lastLang = document.querySelector("li:nth-child(4)");
+      lastLang.remove();
+    </script>
+  </body>
+</html>
