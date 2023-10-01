@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgb(38, 38, 38);
+      color: aliceblue;
+    }
+    .container {
+      margin: 100px 0px;
+      text-align: center;
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+    }
+    .grid {
+      background-color: rgb(94, 94, 94);
+      padding: 30px 80px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    .three {
+      background-color: rgb(151, 0, 0);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Grids Layout</h1>
+      <div id="list">
+        <span class="grid" id="1"> New Layout 1</span>
+        <span class="grid" id="2"> New Layout 2</span>
+        <span class="grid three" id="3"> New Layout 3</span>
+        <span class="grid" id="4"> New Layout 4</span>
+        <span class="grid" id="5"> New Layout 5</span>
+        <span class="grid" id="6"> New Layout 6</span>
+        <span class="grid" id="7"> New Layout 7</span>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // document.getElementById("list").addEventListener("click", function (e) {
+    //   console.log("list clicked");
+    // }, false);
+
+    // there have two events bubbling and capturing  
+    // bubbling is working bottom to top and capturing top to bottom event
+    //  false is bubbling and true is capturing
+
+    // document.getElementById("3").addEventListener("click", function (e) {
+    //   console.log("grid items clicked");
+    // }, false);
+
+    //  ------------      click and remove item
+    document.getElementById("list").addEventListener('click', function(e){
+        console.log(e.target);
+        let removeItem = e.target;
+        removeItem.remove();
+    })
+
+  </script>
+</html>
