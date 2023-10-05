@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyBoard</title>
+  </head>
+  <body style="background-color: rgb(42, 42, 42); color: rgb(228, 228, 228)">
+    <div class="project">
+      <div id="insert">
+        <h1 class="key">keyBoard Press Project</h1>
+      </div>
+    </div>
+
+
+
+
+    <!--  script file -->
+    <script>
+      const insert = document.getElementById("insert");
+
+      window.addEventListener("keydown", (e) => {
+        insert.innerHTML = `
+     <div class="color">
+        <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " "? "space": e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+
+    `;
+      });
+
+    </script>
+  </body>
+</html>
